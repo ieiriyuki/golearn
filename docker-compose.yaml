@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  app:
+    image: golang
+    volumes:
+     - ./app:/app
+    working_dir: /app
+    ports:
+      - 80:80
+    stdin_open: true
+    tty: true
