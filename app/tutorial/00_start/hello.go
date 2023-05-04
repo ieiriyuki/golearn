@@ -13,9 +13,11 @@ func main() {
 
     fmt.Println(quote.Go())
 
-    message, err := greetings.Hello("")
+    names := []string{"Gradys", "Samantha", "Darrin"}
+
+    messages, err := greetings.Hellos(names)
     if err != nil {
         log.Fatal(err)
     }
-    fmt.Println(message)
+    fmt.Println(messages)
 }
