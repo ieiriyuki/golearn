@@ -5,7 +5,22 @@ services:
     volumes:
      - ./app:/app
     working_dir: /app
+    environment:
+      - DBUSER=go
+      - DBPASS=poiu4321#$%
     ports:
       - 80:80
     stdin_open: true
     tty: true
+
+  db:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=asdf0987$%&
+      - MYSQL_DATABASE=go
+      - MYSQL_USER=go
+      - MYSQL_PASSWORD=poiu4321#$%
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
