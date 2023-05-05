@@ -29,3 +29,29 @@ func TestSumFloats(t *testing.T) {
 		t.Fatalf(`SumInts(m) = %v, want %v`, actual, expected)
 	}
 }
+
+func TestSumIoFInt(t *testing.T) {
+	m := map[string]int64 {
+		"a": 1,
+		"b": 2,
+		"c": 3,
+	}
+	actual := SumIntsOrFloats(m)
+	var expected int64 = 6
+	if actual != expected {
+		t.Fatalf(`SumIntsOrFloats(m) = %v, want %v`, actual, expected)
+	}
+}
+
+func TestSumIoFFloat(t *testing.T) {
+	m := map[string]float64 {
+		"a": 1.1,
+		"b": 2.2,
+		"c": 3.3,
+	}
+	actual := SumIntsOrFloats(m)
+	var expected float64 = 6.6
+	if actual != expected {
+		t.Fatalf(`SumIntsOrFloats(m) = %v, want %v`, actual, expected)
+	}
+}
